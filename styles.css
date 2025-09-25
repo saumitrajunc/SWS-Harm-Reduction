@@ -1,30 +1,42 @@
 /* UNC Chapel Hill Harm Reduction Initiative - Modern Stylesheet */
 
-/* CSS Custom Properties for UNC Chapel Hill Color Palette */
+/* CSS Custom Properties for Official UNC Chapel Hill Color Palette */
 :root {
-    /* Primary UNC Colors */
-    --unc-blue: #4B9CD3;           /* Carolina Blue */
-    --unc-navy: #1E3A8A;           /* Navy Blue */
-    --unc-dark-blue: #0F2C5A;      /* Dark Blue */
-    --unc-light-blue: #7BB3E0;     /* Light Blue */
+    /* Primary UNC Colors - Official Brand Colors */
+    --unc-carolina-blue: #4B9CD3;      /* Carolina Blue - PMS 542 */
+    --unc-navy: #13294B;               /* Navy - PMS 2767 */
+    --unc-black: #151515;              /* Black - PMS Black 3 */
+    --unc-white: #FFFFFF;              /* White */
+    --unc-gray: #F8F8F8;              /* Gray - PMS Black 3 at 6% */
     
-    /* Secondary Colors */
-    --unc-gold: #FFD700;           /* Gold/Yellow */
-    --unc-dark-gold: #FFC107;      /* Dark Gold */
-    --unc-white: #FFFFFF;          /* White */
-    --unc-light-gray: #F8F9FA;     /* Light Gray */
-    --unc-gray: #6C757D;           /* Gray */
-    --unc-dark-gray: #343A40;      /* Dark Gray */
+    /* Secondary Palette */
+    --unc-basin-slate: #4F758B;        /* Basin Slate - PMS 5405 */
+    --unc-campus-sandstone: #F4E8DD;   /* Campus Sandstone - PMS 2309 at 50% */
+    --unc-longleaf-pine: #00594C;      /* Longleaf Pine - PMS 561 */
+    
+    /* Digital Links */
+    --unc-digital-blue: #007FAE;       /* Digital Links Blue */
+    
+    /* Legacy/Compatibility Colors */
+    --unc-blue: var(--unc-carolina-blue);
+    --unc-dark-blue: var(--unc-navy);
+    --unc-light-blue: #7BB3E0;        /* Light Blue variant */
+    --unc-gold: #FFD700;              /* Gold/Yellow accent */
+    --unc-dark-gold: #FFC107;         /* Dark Gold */
+    --unc-light-gray: var(--unc-gray);
+    --unc-dark-gray: var(--unc-black);
     
     /* Accent Colors */
     --unc-green: #28A745;          /* Success Green */
     --unc-red: #DC3545;            /* Alert Red */
     --unc-orange: #FD7E14;         /* Warning Orange */
     
-    /* Gradients */
-    --unc-primary-gradient: linear-gradient(135deg, var(--unc-blue) 0%, var(--unc-navy) 100%);
-    --unc-secondary-gradient: linear-gradient(135deg, var(--unc-light-blue) 0%, var(--unc-blue) 100%);
+    /* Official UNC Gradients */
+    --unc-primary-gradient: linear-gradient(135deg, var(--unc-carolina-blue) 0%, var(--unc-navy) 100%);
+    --unc-secondary-gradient: linear-gradient(135deg, var(--unc-light-blue) 0%, var(--unc-carolina-blue) 100%);
     --unc-gold-gradient: linear-gradient(135deg, var(--unc-gold) 0%, var(--unc-dark-gold) 100%);
+    --unc-campus-gradient: linear-gradient(135deg, var(--unc-campus-sandstone) 0%, var(--unc-gray) 100%);
+    --unc-nature-gradient: linear-gradient(135deg, var(--unc-longleaf-pine) 0%, var(--unc-basin-slate) 100%);
     
     /* Typography */
     --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -188,7 +200,7 @@ header::before {
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    color: var(--unc-blue);
+    color: var(--unc-carolina-blue);
     font-size: 1.2rem;
     box-shadow: var(--shadow-md);
     transition: var(--transition-normal);
@@ -449,9 +461,9 @@ main {
     line-height: 1.7;
 }
 
-/* Narcan Section */
+/* Narcan Section - Using UNC Campus Sandstone */
 .narcan-section {
-    background: linear-gradient(135deg, #E8F5E8 0%, #C8E6C9 100%);
+    background: linear-gradient(135deg, var(--unc-campus-sandstone) 0%, var(--unc-gray) 100%);
     padding: var(--spacing-xxl) 0;
     border-radius: var(--radius-xl);
     margin: var(--spacing-xl) 0;
@@ -486,7 +498,7 @@ main {
 
 .narcan-info h4 {
     font-size: 2.2rem;
-    color: #2E7D32;
+    color: var(--unc-longleaf-pine);
     margin-bottom: var(--spacing-lg);
     font-weight: 700;
 }
@@ -498,11 +510,11 @@ main {
 
 .narcan-info li {
     padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid rgba(200, 230, 201, 0.5);
+    border-bottom: 1px solid rgba(0, 89, 76, 0.2);
     position: relative;
     padding-left: var(--spacing-xl);
     font-size: 1.1rem;
-    color: #2E7D32;
+    color: var(--unc-longleaf-pine);
     transition: var(--transition-fast);
 }
 
@@ -516,7 +528,7 @@ main {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #2E7D32;
+    color: var(--unc-longleaf-pine);
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -524,7 +536,7 @@ main {
 .narcan-info p {
     margin-top: var(--spacing-lg);
     font-weight: 700;
-    color: #2E7D32;
+    color: var(--unc-longleaf-pine);
     font-size: 1.2rem;
     text-align: left;
 }
@@ -537,14 +549,14 @@ main {
     width: 220px;
     height: 220px;
     background: var(--unc-white);
-    border: 4px solid #2E7D32;
+    border: 4px solid var(--unc-longleaf-pine);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     font-size: 1.3rem;
-    color: #2E7D32;
+    color: var(--unc-longleaf-pine);
     font-weight: 700;
     box-shadow: var(--shadow-lg);
     transition: var(--transition-normal);
@@ -581,7 +593,7 @@ main {
 .narcan-visual p {
     margin-top: var(--spacing-lg);
     font-weight: 700;
-    color: #2E7D32;
+    color: var(--unc-longleaf-pine);
     font-size: 1.3rem;
 }
 
