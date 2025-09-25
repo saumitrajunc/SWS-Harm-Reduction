@@ -1,76 +1,59 @@
-/* UNC Chapel Hill Harm Reduction Initiative - Modern Stylesheet */
+/* UNC Chapel Hill Harm Reduction Initiative - SpaceX-Inspired Design */
 
-/* CSS Custom Properties for Official UNC Chapel Hill Color Palette */
+/* Import Modern Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* CSS Custom Properties for SpaceX-Inspired UNC Design */
 :root {
-    /* Primary UNC Colors - Official Brand Colors */
-    --unc-carolina-blue: #4B9CD3;      /* Carolina Blue - PMS 542 */
-    --unc-navy: #13294B;               /* Navy - PMS 2767 */
-    --unc-black: #151515;              /* Black - PMS Black 3 */
-    --unc-white: #FFFFFF;              /* White */
-    --unc-gray: #F8F8F8;              /* Gray - PMS Black 3 at 6% */
+    /* Primary UNC Colors - Vibrant Blue Theme */
+    --unc-carolina-blue: #4B9CD3;      /* Carolina Blue - Primary */
+    --unc-navy: #13294B;               /* Navy - Dark accent */
+    --unc-black: #000000;             /* Pure Black - SpaceX style */
+    --unc-white: #FFFFFF;             /* Pure White */
+    --unc-gray: #F8F8F8;             /* Light Gray */
     
-    /* Secondary Palette */
-    --unc-basin-slate: #4F758B;        /* Basin Slate - PMS 5405 */
-    --unc-campus-sandstone: #F4E8DD;   /* Campus Sandstone - PMS 2309 at 50% */
-    --unc-longleaf-pine: #00594C;      /* Longleaf Pine - PMS 561 */
-    
-    /* Digital Links */
-    --unc-digital-blue: #007FAE;       /* Digital Links Blue */
-    
-    /* Legacy/Compatibility Colors */
-    --unc-blue: var(--unc-carolina-blue);
-    --unc-dark-blue: var(--unc-navy);
-    --unc-light-blue: #7BB3E0;        /* Light Blue variant */
-    --unc-gold: #FFD700;              /* Gold/Yellow accent */
-    --unc-dark-gold: #FFC107;         /* Dark Gold */
-    --unc-light-gray: var(--unc-gray);
-    --unc-dark-gray: var(--unc-black);
-    
-    /* Accent Colors */
-    --unc-green: #28A745;          /* Success Green */
-    --unc-red: #DC3545;            /* Alert Red */
-    --unc-orange: #FD7E14;         /* Warning Orange */
-    
-    /* Official UNC Gradients */
-    --unc-primary-gradient: linear-gradient(135deg, var(--unc-carolina-blue) 0%, var(--unc-navy) 100%);
-    --unc-secondary-gradient: linear-gradient(135deg, var(--unc-light-blue) 0%, var(--unc-carolina-blue) 100%);
-    --unc-gold-gradient: linear-gradient(135deg, var(--unc-gold) 0%, var(--unc-dark-gold) 100%);
-    --unc-campus-gradient: linear-gradient(135deg, var(--unc-campus-sandstone) 0%, var(--unc-gray) 100%);
-    --unc-nature-gradient: linear-gradient(135deg, var(--unc-longleaf-pine) 0%, var(--unc-basin-slate) 100%);
+    /* SpaceX-Inspired Color Palette */
+    --spacex-dark: #000000;          /* SpaceX Black */
+    --spacex-blue: #4B9CD3;          /* UNC Carolina Blue as primary */
+    --spacex-light-blue: #7BB3E0;    /* Light blue accent */
+    --spacex-gray: #1a1a1a;          /* Dark gray */
+    --spacex-light-gray: #f5f5f5;    /* Light gray */
+    --spacex-accent: #00D4FF;        /* Bright cyan accent */
     
     /* Typography */
-    --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-heading: 'Poppins', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Space Grotesk', 'Inter', sans-serif;
     
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --spacing-xxl: 4rem;
+    /* Spacing System */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
     
     /* Border Radius */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
-    --radius-full: 50px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
     
     /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
     --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
+    --shadow-glow: 0 0 20px rgba(75, 156, 211, 0.3);
     
     /* Transitions */
-    --transition-fast: 0.2s ease;
+    --transition-fast: 0.15s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
+    --transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 /* Reset and Base Styles */
 * {
@@ -87,60 +70,34 @@ html {
 body {
     font-family: var(--font-primary);
     line-height: 1.6;
-    color: var(--unc-dark-gray);
-    background-color: var(--unc-light-gray);
+    color: var(--unc-white);
+    background: var(--spacex-dark);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Container */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    padding: 0 var(--space-lg);
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: var(--spacing-sm);
-}
-
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1.125rem; }
-
-p {
-    margin-bottom: var(--spacing-sm);
-    font-size: 1.1rem;
-}
-
-/* Emergency Alert */
+/* Emergency Alert - SpaceX Style */
 .emergency-alert {
-    background: linear-gradient(135deg, var(--unc-red) 0%, #B71C1C 100%);
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
     color: var(--unc-white);
-    padding: var(--spacing-sm);
+    padding: var(--space-md);
     text-align: center;
     font-weight: 600;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     animation: pulse 2s infinite;
-}
-
-.emergency-alert a {
-    color: var(--unc-white);
-    text-decoration: underline;
-    transition: var(--transition-fast);
-}
-
-.emergency-alert a:hover {
-    color: var(--unc-gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
 @keyframes pulse {
@@ -148,115 +105,103 @@ p {
     50% { opacity: 0.9; }
 }
 
-/* Header */
+/* Header - SpaceX Style */
 header {
-    background: var(--unc-primary-gradient);
-    color: var(--unc-white);
-    padding: var(--spacing-sm) 0;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    backdrop-filter: blur(10px);
-}
-
-header::before {
-    content: '';
-    position: absolute;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(75, 156, 211, 0.2);
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
-    pointer-events: none;
+    z-index: 1000;
+    transition: var(--transition-normal);
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    padding: var(--space-lg) 0;
     position: relative;
-    z-index: 1;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--space-md);
 }
 
 .logo h1 {
-    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 0;
+    color: var(--unc-white);
+    letter-spacing: -0.5px;
 }
 
 .unc-logo {
-    width: 60px;
-    height: 60px;
-    background: var(--unc-white);
-    border-radius: var(--radius-full);
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--unc-carolina-blue) 0%, var(--spacex-accent) 100%);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    color: var(--unc-carolina-blue);
-    font-size: 1.2rem;
-    box-shadow: var(--shadow-md);
+    color: var(--unc-white);
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-glow);
     transition: var(--transition-normal);
 }
 
 .unc-logo:hover {
     transform: scale(1.05);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 0 30px rgba(75, 156, 211, 0.5);
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
+    gap: var(--space-2xl);
 }
 
 nav a {
     color: var(--unc-white);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     transition: var(--transition-normal);
     position: relative;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
+    padding: var(--space-sm) 0;
+    letter-spacing: 0.5px;
 }
 
 nav a:hover {
-    color: var(--unc-gold);
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+    color: var(--unc-carolina-blue);
 }
 
 nav a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 50%;
+    bottom: 0;
+    left: 0;
     width: 0;
     height: 2px;
-    background: var(--unc-gold);
+    background: linear-gradient(90deg, var(--unc-carolina-blue), var(--spacex-accent));
     transition: var(--transition-normal);
-    transform: translateX(-50%);
 }
 
 nav a:hover::after {
     width: 100%;
 }
 
-/* Hero Section */
+/* Hero Section - SpaceX Style */
 .hero {
-    background: var(--unc-primary-gradient);
-    background-attachment: fixed;
-    color: var(--unc-white);
-    text-align: center;
-    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(135deg, var(--spacex-dark) 0%, #0a0a0a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
 }
@@ -268,36 +213,47 @@ nav a:hover::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0.05)"/></linearGradient></defs><circle fill="url(%23bg)" cx="200" cy="150" r="100"/><circle fill="url(%23bg)" cx="800" cy="300" r="150"/><circle fill="url(%23bg)" cx="1000" cy="100" r="80"/><circle fill="url(%23bg)" cx="400" cy="400" r="120"/></svg>');
-    opacity: 0.6;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(75, 156, 211, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
     animation: float 20s ease-in-out infinite;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: var(--space-xl);
+    background: linear-gradient(135deg, var(--unc-white) 0%, var(--unc-carolina-blue) 50%, var(--spacex-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    letter-spacing: -2px;
     animation: fadeInUp 1s ease-out;
 }
 
 .hero p {
-    font-size: 1.4rem;
-    margin-bottom: var(--spacing-xl);
-    max-width: 800px;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-3xl);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    opacity: 0.95;
+    line-height: 1.7;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
@@ -314,18 +270,19 @@ nav a:hover::after {
 
 .cta-button {
     display: inline-block;
-    background: var(--unc-gold-gradient);
-    color: var(--unc-navy);
-    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--unc-carolina-blue) 0%, var(--spacex-accent) 100%);
+    color: var(--unc-white);
+    padding: var(--space-lg) var(--space-2xl);
     text-decoration: none;
-    border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 1.2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1.1rem;
     transition: var(--transition-normal);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-glow);
     position: relative;
     overflow: hidden;
     animation: fadeInUp 1s ease-out 0.4s both;
+    letter-spacing: 0.5px;
 }
 
 .cta-button::before {
@@ -335,7 +292,7 @@ nav a:hover::after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: var(--transition-slow);
 }
 
@@ -344,36 +301,38 @@ nav a:hover::after {
 }
 
 .cta-button:hover {
-    background: var(--unc-dark-gold);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(75, 156, 211, 0.5);
 }
 
 /* Main Content */
 main {
-    padding: var(--spacing-xxl) 0;
+    padding: var(--space-4xl) 0;
 }
 
 .section {
-    margin-bottom: var(--spacing-xxl);
+    margin-bottom: var(--space-4xl);
 }
 
 .section h3 {
-    color: var(--unc-navy);
-    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--unc-white);
+    margin-bottom: var(--space-2xl);
     text-align: center;
     position: relative;
-    padding-bottom: var(--spacing-sm);
+    letter-spacing: -1px;
 }
 
 .section h3::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 50%;
-    width: 80px;
-    height: 4px;
-    background: var(--unc-gold-gradient);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--unc-carolina-blue), var(--spacex-accent));
     border-radius: var(--radius-sm);
     transform: translateX(-50%);
 }
@@ -381,29 +340,30 @@ main {
 .section p {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto var(--spacing-lg);
+    margin: 0 auto var(--space-2xl);
     font-size: 1.2rem;
-    color: var(--unc-gray);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
 }
 
-/* Cards */
+/* Cards - SpaceX Style */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-2xl);
+    margin-top: var(--space-3xl);
 }
 
 .card {
-    background: var(--unc-white);
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    padding: var(--space-3xl);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(75, 156, 211, 0.2);
     text-align: center;
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(75, 156, 211, 0.1);
 }
 
 .card::before {
@@ -412,8 +372,8 @@ main {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: var(--unc-primary-gradient);
+    height: 3px;
+    background: linear-gradient(90deg, var(--unc-carolina-blue), var(--spacex-accent));
     transform: scaleX(0);
     transition: var(--transition-normal);
 }
@@ -424,51 +384,55 @@ main {
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--unc-blue);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--unc-carolina-blue);
+    box-shadow: var(--shadow-glow);
 }
 
 .card-icon {
-    width: 90px;
-    height: 90px;
-    background: var(--unc-primary-gradient);
-    border-radius: var(--radius-full);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--unc-carolina-blue), var(--spacex-accent));
+    border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto var(--spacing-lg);
-    font-size: 2.5rem;
+    margin: 0 auto var(--space-xl);
+    font-size: 2rem;
     color: var(--unc-white);
     box-shadow: var(--shadow-md);
     transition: var(--transition-normal);
 }
 
 .card:hover .card-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: var(--shadow-lg);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
 }
 
 .card h4 {
-    color: var(--unc-navy);
-    margin-bottom: var(--spacing-md);
-    font-size: 1.6rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--unc-white);
+    margin-bottom: var(--space-lg);
+    font-weight: 600;
 }
 
 .card p {
     text-align: left;
     margin-bottom: 0;
-    color: var(--unc-gray);
-    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
 }
 
-/* Narcan Section - Using UNC Campus Sandstone */
+/* Narcan Section - SpaceX Style */
 .narcan-section {
-    background: linear-gradient(135deg, var(--unc-campus-sandstone) 0%, var(--unc-gray) 100%);
-    padding: var(--spacing-xxl) 0;
-    border-radius: var(--radius-xl);
-    margin: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, rgba(75, 156, 211, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+    padding: var(--space-4xl) 0;
+    border-radius: var(--radius-2xl);
+    margin: var(--space-3xl) 0;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(75, 156, 211, 0.2);
 }
 
 .narcan-section::before {
@@ -478,7 +442,7 @@ main {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(40, 167, 69, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(75, 156, 211, 0.05) 0%, transparent 70%);
     animation: rotate 30s linear infinite;
 }
 
@@ -490,16 +454,17 @@ main {
 .narcan-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xxl);
+    gap: var(--space-4xl);
     align-items: center;
     position: relative;
     z-index: 1;
 }
 
 .narcan-info h4 {
-    font-size: 2.2rem;
-    color: var(--unc-longleaf-pine);
-    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--unc-carolina-blue);
+    margin-bottom: var(--space-xl);
     font-weight: 700;
 }
 
@@ -509,18 +474,18 @@ main {
 }
 
 .narcan-info li {
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid rgba(0, 89, 76, 0.2);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid rgba(75, 156, 211, 0.2);
     position: relative;
-    padding-left: var(--spacing-xl);
+    padding-left: var(--space-xl);
     font-size: 1.1rem;
-    color: var(--unc-longleaf-pine);
+    color: rgba(255, 255, 255, 0.8);
     transition: var(--transition-fast);
 }
 
 .narcan-info li:hover {
-    background: rgba(255, 255, 255, 0.3);
-    padding-left: var(--spacing-lg);
+    background: rgba(75, 156, 211, 0.1);
+    padding-left: var(--space-lg);
     border-radius: var(--radius-sm);
 }
 
@@ -528,16 +493,16 @@ main {
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--unc-longleaf-pine);
+    color: var(--unc-carolina-blue);
     font-weight: bold;
     font-size: 1.2rem;
 }
 
 .narcan-info p {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--space-xl);
     font-weight: 700;
-    color: var(--unc-longleaf-pine);
-    font-size: 1.2rem;
+    color: var(--unc-carolina-blue);
+    font-size: 1.3rem;
     text-align: left;
 }
 
@@ -546,19 +511,19 @@ main {
 }
 
 .narcan-box {
-    width: 220px;
-    height: 220px;
-    background: var(--unc-white);
-    border: 4px solid var(--unc-longleaf-pine);
-    border-radius: var(--radius-lg);
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--unc-carolina-blue);
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    font-size: 1.3rem;
-    color: var(--unc-longleaf-pine);
+    font-size: 1.2rem;
+    color: var(--unc-carolina-blue);
     font-weight: 700;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-glow);
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
@@ -571,7 +536,7 @@ main {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(46, 125, 50, 0.1), transparent);
+    background: linear-gradient(45deg, transparent, rgba(75, 156, 211, 0.1), transparent);
     transform: rotate(45deg);
     transition: var(--transition-slow);
 }
@@ -587,24 +552,25 @@ main {
 
 .narcan-box:hover {
     transform: scale(1.05);
-    box-shadow: var(--shadow-xl);
+    box-shadow: 0 0 40px rgba(75, 156, 211, 0.4);
 }
 
 .narcan-visual p {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--space-xl);
     font-weight: 700;
-    color: var(--unc-longleaf-pine);
+    color: var(--unc-carolina-blue);
     font-size: 1.3rem;
 }
 
-/* Contact Section */
+/* Contact Section - SpaceX Style */
 .contact-section {
-    background: var(--unc-primary-gradient);
+    background: linear-gradient(135deg, rgba(75, 156, 211, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
     color: var(--unc-white);
-    padding: var(--spacing-xxl) 0;
-    border-radius: var(--radius-xl);
+    padding: var(--space-4xl) 0;
+    border-radius: var(--radius-2xl);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(75, 156, 211, 0.2);
 }
 
 .contact-section::before {
@@ -620,14 +586,14 @@ main {
 
 .contact-section h3 {
     color: var(--unc-white);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--space-xl);
     position: relative;
     z-index: 1;
 }
 
 .contact-section p {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--spacing-xl);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-3xl);
     position: relative;
     z-index: 1;
 }
@@ -635,49 +601,51 @@ main {
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
+    gap: var(--space-2xl);
+    margin-top: var(--space-3xl);
     position: relative;
     z-index: 1;
 }
 
 .contact-item {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    padding: var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-2xl);
     border-radius: var(--radius-lg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(75, 156, 211, 0.2);
     transition: var(--transition-normal);
 }
 
 .contact-item:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
     transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-glow);
 }
 
 .contact-item h5 {
-    font-size: 1.4rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--unc-gold);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: var(--space-md);
+    color: var(--unc-carolina-blue);
     font-weight: 600;
 }
 
 .contact-item p {
     margin-bottom: 0;
-    color: var(--unc-white);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
 }
 
-/* Footer */
+/* Footer - SpaceX Style */
 footer {
-    background: var(--unc-dark-gray);
+    background: var(--spacex-dark);
     color: var(--unc-white);
     text-align: center;
-    padding: var(--spacing-xl) 0;
-    margin-top: var(--spacing-xxl);
+    padding: var(--space-3xl) 0;
+    margin-top: var(--space-4xl);
     position: relative;
+    border-top: 1px solid rgba(75, 156, 211, 0.2);
 }
 
 footer::before {
@@ -686,8 +654,8 @@ footer::before {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: var(--unc-primary-gradient);
+    height: 3px;
+    background: linear-gradient(90deg, var(--unc-carolina-blue), var(--spacex-accent));
 }
 
 .footer-content {
@@ -695,55 +663,53 @@ footer::before {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: var(--spacing-lg);
+    gap: var(--space-lg);
 }
 
 .footer-links {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--space-xl);
 }
 
 .footer-links a {
-    color: var(--unc-white);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: var(--transition-normal);
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-sm);
 }
 
 .footer-links a:hover {
-    color: var(--unc-gold);
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--unc-carolina-blue);
+    background: rgba(75, 156, 211, 0.1);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    :root {
-        --spacing-lg: 1rem;
-        --spacing-xl: 1.5rem;
-        --spacing-xxl: 2rem;
-    }
-    
     .container {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--space-md);
     }
     
     .header-content {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--space-lg);
+    }
+    
+    .hero {
+        padding-top: 120px;
     }
     
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .narcan-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+        gap: var(--space-2xl);
     }
     
     .footer-content {
@@ -753,43 +719,43 @@ footer::before {
     
     nav ul {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--space-md);
         text-align: center;
     }
     
     .cards {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--space-xl);
     }
     
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--space-xl);
     }
 }
 
 @media (max-width: 480px) {
     .hero h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .cta-button {
-        padding: var(--spacing-sm) var(--spacing-lg);
-        font-size: 1.1rem;
+        padding: var(--space-md) var(--space-lg);
+        font-size: 1rem;
     }
     
     .card {
-        padding: var(--spacing-lg);
+        padding: var(--space-xl);
     }
     
     .narcan-box {
-        width: 180px;
-        height: 180px;
-        font-size: 1.1rem;
+        width: 200px;
+        height: 200px;
+        font-size: 1rem;
     }
 }
 
@@ -805,7 +771,7 @@ footer::before {
 /* Focus styles for accessibility */
 a:focus,
 button:focus {
-    outline: 2px solid var(--unc-gold);
+    outline: 2px solid var(--unc-carolina-blue);
     outline-offset: 2px;
 }
 
