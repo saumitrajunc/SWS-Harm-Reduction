@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
-    <!-- Emergency Alert -->
-    <div class="emergency-alert">
-        🚨 In case of overdose emergency, call 911 immediately. Narcan is available at multiple locations across campus.
-    </div>
 
     <!-- Header -->
     <header>
@@ -63,7 +59,6 @@
                                 <li><strong>Undergraduate Library</strong> - Information Desk</li>
                                 <li><strong>Wilson Library</strong> - Circulation Desk</li>
                                 <li><strong>Student Union</strong> - Information Desk</li>
-                                <li><strong>Residence Halls</strong> - All Front Desks</li>
                                 <li><strong>Campus Recreation</strong> - All Centers</li>
                                 <li><strong>Emergency Blue Lights</strong> - All Stations</li>
                             </ul>
@@ -81,6 +76,16 @@
                 </div>
             </section>
 
+            <!-- Campus Map Section -->
+            <section class="section" id="map">
+                <h3>Campus Map</h3>
+                <p>Find Narcan kits across campus. Free, confidential, and no questions asked.</p>
+                
+                <div class="map-embed" style="margin-top: 20px;">
+                    <iframe title="UNC Chapel Hill Narcan Locations Map" src="https://www.google.com/maps/d/u/0/embed?mid=1ky9hJ02nqyG9b4nh6Waoykhrge_M4Bo&ehbc=2E312F" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+
             <!-- How to Get Section -->
             <section class="section">
                 <h3>How to Get a Narcan Kit</h3>
@@ -88,22 +93,42 @@
                 
                 <div class="cards">
                     <div class="card">
-                        <div class="card-icon">📍</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="10" r="3" stroke="#13294B" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
                         <h4>Step 1: Find a Location</h4>
                         <p>Visit any of our campus access points listed above. All locations are clearly marked and staff are trained to help.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">💬</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <path d="M8 9H16M8 13H12" stroke="#13294B" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h4>Step 2: Ask for a Kit</h4>
                         <p>Simply ask for a Narcan kit. No questions will be asked about why you need it. The process takes less than 2 minutes.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">📋</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 19.5V6.5C4 5.67157 4.67157 5 5.5 5H18.5C19.3284 5 20 5.67157 20 6.5V17.5C20 18.3284 19.3284 19 18.5 19H6.5L4 19.5Z" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <path d="M8 9H16M8 13H12" stroke="#13294B" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h4>Step 3: Receive Training</h4>
                         <p>Staff will provide brief instructions on how to use Narcan safely. You can also request additional training materials.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">✅</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 12L11 14L15 10" stroke="#13294B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="10" stroke="#13294B" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
                         <h4>Step 4: Take Action</h4>
                         <p>You're now equipped to save a life. Remember: if you use Narcan, always call 911 immediately.</p>
                     </div>
@@ -155,22 +180,44 @@
                 
                 <div class="cards">
                     <div class="card">
-                        <div class="card-icon">⚖️</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <path d="M8 21L12 17L16 21" stroke="#13294B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h4>Good Samaritan Laws</h4>
                         <p>North Carolina's Good Samaritan law protects individuals who seek medical help for drug overdoses, including those who administer Narcan.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">🔒</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="16" r="1" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <path d="M7 11V7C7 5.67392 7.52678 4.40215 8.46447 3.46447C9.40215 2.52678 10.6739 2 12 2C13.3261 2 14.5979 2.52678 15.5355 3.46447C16.4732 4.40215 17 5.67392 17 7V11" stroke="#13294B" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
                         <h4>Confidentiality</h4>
                         <p>All interactions with our program are confidential. We do not share information with law enforcement or other parties.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">🏥</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21H21" stroke="#13294B" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M5 21V7L12 3L19 7V21" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <path d="M9 9V13H15V9" stroke="#13294B" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M9 17V21H15V17" stroke="#13294B" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h4>Campus Policy</h4>
                         <p>UNC supports harm reduction efforts and encourages students to seek help during medical emergencies without fear of disciplinary action.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">📞</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06691 2.16708 8.43376 2.48353C8.80061 2.79999 9.04076 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.89391 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="#13294B" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
                         <h4>Emergency Protocol</h4>
                         <p>Always call 911 first. Narcan is not a substitute for professional medical care, but it can buy time until help arrives.</p>
                     </div>
@@ -181,26 +228,30 @@
             <section class="section">
                 <h3>Frequently Asked Questions</h3>
                 <p>Common questions about Narcan access and use.</p>
-                
-                <div class="narcan-section">
-                    <div class="narcan-content">
-                        <div class="narcan-info">
-                            <h4>Common Questions</h4>
-                            <ul>
-                                <li><strong>Is Narcan really free?</strong> Yes, completely free with no questions asked.</li>
-                                <li><strong>Do I need training?</strong> Basic instructions are provided, but formal training is recommended.</li>
-                                <li><strong>Can I get in trouble for having Narcan?</strong> No, it's legal to possess and use Narcan.</li>
-                                <li><strong>What if I use it and it doesn't work?</strong> Call 911 and administer a second dose if available.</li>
-                                <li><strong>How long does Narcan last?</strong> Effects last 30-90 minutes, so medical care is still needed.</li>
-                                <li><strong>Can I get more kits?</strong> Yes, you can get additional kits anytime.</li>
-                            </ul>
-                        </div>
-                        <div class="narcan-visual">
-                            <div class="narcan-box">
-                                QUESTIONS?<br>ASK US<br>ANYTIME
-                            </div>
-                            <p>We're here to help. Contact us with any questions or concerns.</p>
-                        </div>
+                <div class="faq" role="region" aria-label="Narcan FAQ">
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">Is Narcan really free?</button>
+                        <div class="faq-a">Yes! Through the UNC Harm Reduction Program, Narcan is provided to students completely free of charge. There are no hidden costs or requirements.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">Do I need training?</button>
+                        <div class="faq-a">No formal training is required to receive Narcan. However, the program provides quick guidance on how to recognize an overdose and use Narcan safely. It's simple to use, and instructions are included with each kit.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">Can I get in trouble for having Narcan?</button>
+                        <div class="faq-a">No. It is legal to carry Narcan in North Carolina, including on campus. You will not get in trouble for having it—Narcan is meant to save lives.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">What if one dose doesn't work?</button>
+                        <div class="faq-a">Sometimes more than one dose is needed, especially with strong opioids like fentanyl. If the person doesn't respond after 2–3 minutes, give another dose. Always call 911, since medical help is still necessary.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">How long does Narcan last?</button>
+                        <div class="faq-a">Narcan works for about 30–90 minutes, but many opioids last longer. That's why it's critical to call 911 even if the person wakes up, because symptoms can return after Narcan wears off.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">Can I get more kits?</button>
+                        <div class="faq-a">Yes. Students can request additional Narcan kits through the UNC Harm Reduction Program. You will be notified when supplies have been restocked.</div>
                     </div>
                 </div>
             </section>
@@ -246,6 +297,26 @@
             } else {
                 header.style.background = 'rgba(0, 0, 0, 0.95)';
             }
+        });
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-q').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('open');
+                    item.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Toggle current item
+                if (!isExpanded) {
+                    faqItem.classList.add('open');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
         });
     </script>
 </body>

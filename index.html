@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
-    <!-- Emergency Alert -->
-    <div class="emergency-alert">
-        🚨 In case of overdose emergency, call 911 immediately. Narcan is available at multiple locations across campus.
-    </div>
+    
 
     <!-- Header -->
     <header>
@@ -35,13 +32,24 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Saving Lives Through Harm Reduction</h2>
+    <!-- Video Hero Section -->
+    <section class="video-hero" id="home">
+        <div class="video-background">
+            <iframe 
+                src="https://www.youtube-nocookie.com/embed/W5ZbAhjgeEQ?autoplay=1&mute=1&loop=1&playlist=W5ZbAhjgeEQ&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&cc_load_policy=0&disablekb=1&start=0&end=0" 
+                title="Harm Reduction Background Video"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="video-overlay">
+            <div class="container">
+                <h1>Saving Lives Through Harm Reduction</h1>
                 <p>The UNC Chapel Hill Harm Reduction Initiative is dedicated to preventing opioid-related deaths by making Narcan (naloxone) accessible across our campus community. We believe that every life matters and that harm reduction saves lives.</p>
-                <a href="#narcan" class="cta-button">Get Narcan Now</a>
+                <div class="hero-buttons">
+                    <a href="narcan-access.html" class="cta-btn">Get Narcan Now</a>
+                    <a href="training.html" class="cta-btn secondary">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
@@ -56,17 +64,34 @@
                 
                 <div class="cards">
                     <div class="card">
-                        <div class="card-icon">💊</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 6L12 18M6 12L18 12" stroke="#13294B" stroke-width="3" stroke-linecap="round"/>
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="#13294B" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
                         <h4>Narcan Distribution</h4>
                         <p>Free Narcan kits available at multiple locations across campus, including residence halls, student centers, and health services.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">📚</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 19.5V6.5C4 5.67157 4.67157 5 5.5 5H18.5C19.3284 5 20 5.67157 20 6.5V17.5C20 18.3284 19.3284 19 18.5 19H6.5L4 19.5Z" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <path d="M8 9H16M8 13H12" stroke="#13294B" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h4>Education & Training</h4>
                         <p>Comprehensive training sessions on overdose recognition, Narcan administration, and harm reduction principles for students and staff.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">🤝</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="8" cy="7" r="3" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <circle cx="16" cy="7" r="3" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <path d="M2 21V19C2 16.7909 3.79086 15 6 15H10C12.2091 15 14 16.7909 14 19V21" stroke="#13294B" stroke-width="2" fill="none"/>
+                                <path d="M14 21V19C14 17.3431 15.3431 16 17 16H18C19.6569 16 21 17.3431 21 19V21" stroke="#13294B" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
                         <h4>Community Support</h4>
                         <p>Building a supportive community that reduces stigma around substance use and promotes evidence-based harm reduction strategies.</p>
                     </div>
@@ -76,13 +101,12 @@
             <!-- Narcan Section -->
             <section class="narcan-section" id="narcan">
                 <div class="container">
-                    <h3 style="color: #2E7D32;">Narcan Access Points</h3>
+                    
                     <div class="narcan-content">
                         <div class="narcan-info">
                             <h4>Where to Find Narcan</h4>
                             <ul>
                                 <li>Student Health Services (Main Campus)</li>
-                                <li>Residence Hall Front Desks</li>
                                 <li>Student Union Information Desk</li>
                                 <li>Davis Library (24/7 Access)</li>
                                 <li>Undergraduate Library</li>
@@ -90,17 +114,15 @@
                                 <li>Campus Recreation Centers</li>
                                 <li>Emergency Blue Light Stations</li>
                             </ul>
-                            <p style="margin-top: 20px; font-weight: bold; color: #2E7D32;">
+                            <p style="margin-top: 20px; font-weight: bold; color: var(--unc-carolina-blue);">
                                 Narcan is FREE and available to all students, faculty, and staff. No questions asked.
                             </p>
                         </div>
                         <div class="narcan-visual">
-                            <div class="narcan-box">
-                                NARCAN<br>NALOXONE<br>KIT
+                            <div class="narcan-box" id="narcan-kit-box" onclick="redirectToNarcanMap()">
+                                NARCAN<br>KIT
                             </div>
-                            <p style="margin-top: 20px; font-weight: bold; color: #2E7D32;">
-                                Easy to use.<br>Life-saving.<br>Always free.
-                            </p>
+                            
                         </div>
                     </div>
                 </div>
@@ -111,60 +133,35 @@
                 <h3>Resources & Support</h3>
                 <p>We provide comprehensive resources to support our campus community in harm reduction efforts and substance use support.</p>
                 
-                <div class="cards">
-                    <div class="card">
-                        <div class="card-icon">📞</div>
+                <div class="resource-cards">
+                    <div class="resource-card">
+                        <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/us.svg" alt="Emergency icon" />
                         <h4>Emergency Contacts</h4>
                         <p><strong>911</strong> - Emergency Services<br>
                         <strong>988</strong> - Suicide & Crisis Lifeline<br>
-                        <strong>(919) 966-3658</strong> - UNC Counseling & Psychological Services<br>
-                        <strong>(919) 966-2281</strong> - UNC Student Health Services</p>
+                        <strong>(919) 966-3658</strong> - CAPS<br>
+                        <strong>(919) 966-2281</strong> - Student Health</p>
+                        <div class="hotline-buttons">
+                            <a href="tel:911" aria-label="Call 911">Call 911</a>
+                            <a href="tel:988" aria-label="Call 988">Call 988</a>
+                        </div>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">🏥</div>
+                    <div class="resource-card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNiIgZmlsbD0iI0ZGODQwMCIvPgo8Y2lyY2xlIGN4PSIyNCIgY3k9IjEyIiByPSI2IiBmaWxsPSIjRkY0MEE2Ii8+CjxjaXJjbGUgY3g9IjM2IiBjeT0iMTIiIHI9IjYiIGZpbGw9IiM0QjlDRDMiLz4KPHBhdGggZD0iTTEyIDI0QzE4IDI0IDI0IDI4IDI0IDM0QzI0IDI4IDMwIDI0IDM2IDI0QzMwIDI4IDI0IDMyIDE4IDI4QzE4IDI4IDE4IDI0IDEyIDI0WiIgZmlsbD0iI0ZGODQwMCIvPgo8cGF0aCBkPSJNMjQgMjRDMjQgMjQgMjQgMjggMjQgMzRDMjQgMjggMjQgMjQgMjQgMjRaIiBmaWxsPSIjRkY0MEE2Ii8+CjxwYXRoIGQ9Ik0zNiAyNEMzNiAyNCAzNiAyOCAzNiAzNEMzNiAyOCAzNiAyNCAzNiAyNFoiIGZpbGw9IiM0QjlDRDMiLz4KPC9zdmc+" alt="Health services logo" />
                         <h4>Health Services</h4>
-                        <p>UNC Student Health Services offers confidential support for substance use concerns, including counseling, medical care, and referrals to specialized treatment programs.</p>
+                        <p>Confidential support for substance use concerns: counseling, medical care, and referrals.</p>
+                        <a href="resources.html" class="cta-btn">Explore</a>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">📖</div>
+                    <div class="resource-card">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/readthedocs.svg" alt="Educational icon" />
                         <h4>Educational Materials</h4>
-                        <p>Access our comprehensive library of harm reduction resources, including overdose prevention guides, substance use education, and campus safety information.</p>
+                        <p>Overdose prevention guides, substance use education, and safety information.</p>
+                        <a href="training.html" class="cta-btn">Learn</a>
                     </div>
                 </div>
             </section>
 
-            <!-- Contact Section -->
-            <section class="contact-section" id="contact">
-                <div class="container">
-                    <h3 style="color: white; margin-bottom: 20px;">Get Involved</h3>
-                    <p style="color: white; margin-bottom: 40px;">Join our mission to create a safer campus community. Contact us to learn more, volunteer, or request Narcan training.</p>
-                    
-                    <div class="contact-grid">
-                        <div class="contact-item">
-                            <h5>Student Government</h5>
-                            <p>Student Wellness & Safety Department<br>
-                            Campus Box 5100<br>
-                            Chapel Hill, NC 27599</p>
-                        </div>
-                        <div class="contact-item">
-                            <h5>Email</h5>
-                            <p>harmreduction@unc.edu<br>
-                            sgwellness@unc.edu</p>
-                        </div>
-                        <div class="contact-item">
-                            <h5>Social Media</h5>
-                            <p>@UNCHarmReduction<br>
-                            @UNCStudentGov</p>
-                        </div>
-                        <div class="contact-item">
-                            <h5>Office Hours</h5>
-                            <p>Monday - Friday<br>
-                            9:00 AM - 5:00 PM<br>
-                            Student Union, Room 2508</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
         </div>
     </main>
 
@@ -199,17 +196,24 @@
             });
         });
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(135deg, rgba(75, 156, 211, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #4B9CD3 0%, #1E3A8A 100%)';
-                header.style.backdropFilter = 'none';
-            }
-        });
+        // Keep header color fixed (no color change on scroll)
+        // Removed dynamic background overrides to preserve navy header
+        
+        // Narcan kit box interaction
+        function redirectToNarcanMap() {
+            // Change text to "NARCAN KIT" when clicked
+            const narcanBox = document.getElementById('narcan-kit-box');
+            narcanBox.innerHTML = 'NARCAN<br>KIT';
+            
+            // Add visual feedback
+            narcanBox.style.transform = 'scale(0.95)';
+            narcanBox.style.transition = 'all 0.2s ease';
+            
+            // Redirect to narcan access page with map focus
+            setTimeout(() => {
+                window.location.href = 'narcan-access.html#map';
+            }, 200);
+        }
     </script>
 </body>
 </html>
